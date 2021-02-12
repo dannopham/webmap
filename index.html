@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Traffic Control Tower in the US</title>
+    <title>Air Traffic Control Tower in the US</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
     <style>
@@ -73,7 +73,6 @@
             layer.bindPopup(feature.properties.AIRPT_NAME,{closeButton: false})
             layer.on('mouseover', function(){layer.openPopup();})
             layer.on('mouseout', function(){layer.closePopup();})
-            return feature.properties.STATE;
         },
         pointToLayer: function (feature, latlng) {
             var id = 0;
