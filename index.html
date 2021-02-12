@@ -70,7 +70,9 @@
 
     airports= L.geoJson.ajax("assets/airports.geojson", {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.AIRPT_NAME)
+            layer.bindPopup(feature.properties.AIRPT_NAME,{closeButton: false})
+            layer.on('mouseover', function(){layer.openPopup();})
+            layer.on('mouseout', function(){layer.closePopup();})
             return feature.properties.STATE;
         },
         pointToLayer: function (feature, latlng) {
